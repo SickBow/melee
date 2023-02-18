@@ -1,0 +1,22 @@
+{
+    "name": "com.sickbow.melee",
+    "version": "1.0.0",
+    "displayName": "Melee",
+    "description": "Provides components for GameObjects to block, parry, and attack",
+    "unity": "2020.3",
+    "dependencies": {
+      "com.sickbow.utilities": "https://github.com/SickBow/utilities.git"
+   },
+   "keywords": [
+      "Melee",
+      "Combat",
+      "Sickbow",
+      "Package",
+      "System"
+    ],
+    "author": {
+      "name": "Michael Cilona",
+      "email": "mikecilona@gmail.com",
+      "url": "https://www.unity3d.com"
+    }
+  }

@@ -1,0 +1,16 @@
+{
+    "name": "com.sickbow.melee",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6b3634d5b10b03149877419d4bb2eaa7"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,20 @@
+{
+    "name": "com.sickbow.melee.Tests",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6b3127a0982b19742907e8b597176dc7",
+        "GUID:27619889b8ba8c24980f49ee34dbb44a",
+        "GUID:0acc523941302664db1f4e527237feb3"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
