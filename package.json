@@ -5,7 +5,7 @@
     "description": "Provides components for GameObjects to block, parry, and attack",
     "unity": "2020.3",
     "dependencies": {
-      "com.sickbow.utilities": "https://github.com/SickBow/utilities.git"
+      "com.sickbow.utilities": "1.0.0"
    },
    "keywords": [
       "Melee",
