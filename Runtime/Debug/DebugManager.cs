@@ -20,7 +20,7 @@ public class DebugManager : MonoBehaviour
         _oldDebugAllMelee = debugAllMelee;
     }
 
-    void Awake()
+    void Start()
     {
         if (manager == null)
             manager = this;
