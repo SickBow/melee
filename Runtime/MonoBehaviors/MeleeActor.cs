@@ -83,7 +83,6 @@ public class MeleeActor : MonoBehaviour
         
         _handleAttackWhileInState[meleeState]?.Invoke(GenerateHitInfo(attack, hitMeHere));
 
-        Debug.Log($"MeleeActor.ReceiveAttack called on gameObject: '{gameObject.name}' ");
         
     }
     
