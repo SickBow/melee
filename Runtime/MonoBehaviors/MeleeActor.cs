@@ -20,6 +20,8 @@ public class MeleeActor : MonoBehaviour
     public Action<MeleeHitInfo> TookHit;
     public Action<MeleeHitInfo> BlockedHit;
     public Action<MeleeHitInfo> ParriedHit;
+    public Action<MeleeHitInfo> SentHitBlocked;
+    public Action<MeleeHitInfo> SentHitParried;
     
     void Awake()
     {
@@ -94,9 +96,17 @@ public class MeleeActor : MonoBehaviour
     }
     private void HandleAttackInBlock(MeleeHitInfo meleeHitInfo){
         BlockedHit?.Invoke( meleeHitInfo );
+        meleeHitInfo.sender.SentAttackBlocked( meleeHitInfo );
     }
     private void HandleAttackInParry(MeleeHitInfo meleeHitInfo){
         ParriedHit?.Invoke( meleeHitInfo );
+        meleeHitInfo.sender.SentAttackParried( meleeHitInfo );
+    }
+    public void SentAttackBlocked(MeleeHitInfo meleeHitInfo){
+        SentHitBlocked?.Invoke(meleeHitInfo);
+    }
+    public void SentAttackParried(MeleeHitInfo meleeHitInfo){
+        SentHitParried?.Invoke(meleeHitInfo);
     }
 
     private MeleeHitInfo GenerateHitInfo(MeleeAttack attack, RaycastHit hitMeHere){
