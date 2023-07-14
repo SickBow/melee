@@ -8,6 +8,10 @@ public class ActivateAttack : StateMachineBehaviour
     [SerializeField] AttackType attackType;
     [SerializeField, Range(0,1)] float damageStartTime, damageStopTime;
     private MeleeActor _actor;
+
+    public float GetDamageStartTime() => damageStartTime;
+    public float GetDamageStopTime() => damageStopTime;
+    public AttackType GetAttackType() => attackType;
     
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
