@@ -1,6 +1,6 @@
 {
     "name": "com.sickbow.melee",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "displayName": "Melee",
     "description": "Provides components for GameObjects to block, parry, and attack",
     "unity": "2020.3",
