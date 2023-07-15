@@ -22,6 +22,8 @@ public class MeleeActor : MonoBehaviour
     public Action<MeleeHitInfo> ParriedHit;
     public Action<MeleeHitInfo> SentHitBlocked;
     public Action<MeleeHitInfo> SentHitParried;
+    public Action AttackStart;
+    public Action AttackEnd;
     
     void Awake()
     {
