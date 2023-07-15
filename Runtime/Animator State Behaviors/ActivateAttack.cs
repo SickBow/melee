@@ -23,6 +23,7 @@ public class ActivateAttack : StateMachineBehaviour
             damageStopTime = .7f; //default
         }
         _actor.InitializeAttack(attackType);
+        _actor.AttackStart?.Invoke();
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -39,6 +40,7 @@ public class ActivateAttack : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _actor.Default();
+        _actor.AttackEnd?.Invoke();
     }
 }
 }
