@@ -15,6 +15,7 @@ public abstract class MeleeWeapon : MonoBehaviour
     private MeleeActor _owner;
 
     public int GetDamage() => damage;
+    public WeaponType GetWeaponType() => weaponType;
     public Transform GetTip() => hitBoxTip;
     public Transform GetTail() => hitBoxTail;
     public float GetHitboxWidthAndHeight() => hitBoxWidthAndHeight;
