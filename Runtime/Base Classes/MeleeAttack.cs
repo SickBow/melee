@@ -17,7 +17,7 @@ public class MeleeAttack
 
     public bool HitAlreadyRegistered(GameObject gameObject) => gameObjectsHit.Contains(gameObject);
     public void RegisterHit(GameObject gameObject) => gameObjectsHit.Add(gameObject);
-    public void SetGlobalAttackTypeDamageScale(AttackType attackType, float damageScale) => attackTypeScalars[attackType] = damageScale;    
+    public static void SetGlobalAttackTypeDamageScale(AttackType attackType, float damageScale) => attackTypeScalars[attackType] = damageScale;    
     public MeleeActor sender;
     public MeleeWeapon weapon;
     public AttackType attackType;
