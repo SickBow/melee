@@ -1,5 +1,6 @@
 public enum AttackType{
     Light,
     Heavy,
-    Unblockable
+    Unblockable,
+    Critical
 }
