@@ -22,6 +22,7 @@ public class MeleeActor : MonoBehaviour
     public Action<MeleeHitInfo> ParriedHit;
     public Action<MeleeHitInfo> SentHitBlocked;
     public Action<MeleeHitInfo> SentHitParried;
+    public Action<MeleeHitInfo> SentHitSuccess;
     public Action AttackStart;
     public Action AttackEnd;
     
@@ -92,9 +93,11 @@ public class MeleeActor : MonoBehaviour
     
     private void HandleAttackInDefault(MeleeHitInfo meleeHitInfo){
         TookHit?.Invoke( meleeHitInfo );
+        meleeHitInfo.sender.SentAttackSuccess( meleeHitInfo );
     }
     private void HandleAttackInAttack(MeleeHitInfo meleeHitInfo){
         TookHit?.Invoke( meleeHitInfo );
+        meleeHitInfo.sender.SentAttackSuccess( meleeHitInfo );
     }
     private void HandleAttackInBlock(MeleeHitInfo meleeHitInfo){
         BlockedHit?.Invoke( meleeHitInfo );
@@ -109,6 +112,9 @@ public class MeleeActor : MonoBehaviour
     }
     public void SentAttackParried(MeleeHitInfo meleeHitInfo){
         SentHitParried?.Invoke(meleeHitInfo);
+    }
+    public void SentAttackSuccess(MeleeHitInfo meleeHitInfo){
+        SentHitSuccess?.Invoke(meleeHitInfo);
     }
 
     private MeleeHitInfo GenerateHitInfo(MeleeAttack attack, RaycastHit hitMeHere){
