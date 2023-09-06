@@ -122,6 +122,7 @@ public class MeleeActor : MonoBehaviour
             damage = attack.GetDamage(),
             ray = hitMeHere,
             sender = attack.sender,
+            receiver = this,
             weapon = attack.weapon,
             attackType = attack.attackType
         };
