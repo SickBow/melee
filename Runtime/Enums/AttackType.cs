@@ -2,5 +2,6 @@ public enum AttackType{
     Light,
     Heavy,
     Unblockable,
-    Critical
+    Critical,
+    Launcher
 }
