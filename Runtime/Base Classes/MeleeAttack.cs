@@ -27,7 +27,8 @@ public class MeleeAttack
         {AttackType.Light, 1f},
         {AttackType.Heavy, 1.5f},
         {AttackType.Unblockable, 2f},
-        {AttackType.Critical, 2.5f}
+        {AttackType.Critical, 2.5f},
+        {AttackType.Launcher, 1f}
     };
 }
 }
