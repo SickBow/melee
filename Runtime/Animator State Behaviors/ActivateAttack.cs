@@ -8,7 +8,8 @@ public class ActivateAttack : StateMachineBehaviour
     [SerializeField] AttackType attackType;
     [SerializeField, Range(0,1)] float damageStartTime, damageStopTime;
     private MeleeActor _actor;
-
+    private MeleeAttack _attack;
+    
     public float GetDamageStartTime() => damageStartTime;
     public float GetDamageStopTime() => damageStopTime;
     public AttackType GetAttackType() => attackType;
@@ -23,13 +24,14 @@ public class ActivateAttack : StateMachineBehaviour
             damageStopTime = .7f; //default
         }
         _actor.InitializeAttack(attackType);
+        _attack = _actor.GetActiveAttack();
         _actor.AttackStart?.Invoke();
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         float normalizedTime = stateInfo.normalizedTime % 1;
-        if (InActiveTimeRange(normalizedTime))
+        if (InActiveTimeRange(normalizedTime) && _actor.GetActiveAttack() == _attack)
             _actor.Attack();
     }
 
