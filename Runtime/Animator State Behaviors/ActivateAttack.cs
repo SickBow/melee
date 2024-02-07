@@ -23,7 +23,7 @@ public class ActivateAttack : StateMachineBehaviour
             damageStartTime = .3f; //default
             damageStopTime = .7f; //default
         }
-        _actor.InitializeAttack(attackType);
+        _actor.InitializeAttack(attackType, stateInfo);
         _attack = _actor.GetActiveAttack();
         _actor.AttackStart?.Invoke();
     }
