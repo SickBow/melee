@@ -25,7 +25,7 @@ public class ActivateAttack : StateMachineBehaviour
         }
         _actor.InitializeAttack(attackType, stateInfo);
         _attack = _actor.GetActiveAttack();
-        _actor.AttackStart?.Invoke();
+        _actor.AttackStart?.Invoke(_attack);
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -42,7 +42,7 @@ public class ActivateAttack : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _actor.Default();
-        _actor.AttackEnd?.Invoke();
+        _actor.AttackEnd?.Invoke(_attack);
     }
 }
 }
