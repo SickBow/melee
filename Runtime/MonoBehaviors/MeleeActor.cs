@@ -23,8 +23,8 @@ public class MeleeActor : MonoBehaviour
     public Action<MeleeHitInfo> SentHitBlocked;
     public Action<MeleeHitInfo> SentHitParried;
     public Action<MeleeHitInfo> SentHitSuccess;
-    public Action AttackStart;
-    public Action AttackEnd;
+    public Action<MeleeAttack> AttackStart;
+    public Action<MeleeAttack> AttackEnd;
     
     void Awake()
     {
