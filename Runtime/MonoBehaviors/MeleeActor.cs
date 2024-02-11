@@ -50,9 +50,9 @@ public class MeleeActor : MonoBehaviour
         _activeWeapon?.Init(this);
     }    
 
-    public void InitializeAttack(AttackType attackType, AnimatorStateInfo stateInfo)
+    public void InitializeAttack(AttackType attackType, AnimatorStateInfo stateInfo, float damageStart, float damageEnd)
     {
-        _activeAttack = new MeleeAttack(this, _activeWeapon, attackType, stateInfo);
+        _activeAttack = new MeleeAttack(this, _activeWeapon, attackType, stateInfo, damageStart, damageEnd);
     }
 
     public void Attack(){
