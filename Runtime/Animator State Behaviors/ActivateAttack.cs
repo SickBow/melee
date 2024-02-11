@@ -30,6 +30,7 @@ public class ActivateAttack : StateMachineBehaviour
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        _attack.stateInfo = stateInfo;
         float normalizedTime = stateInfo.normalizedTime % 1;
         if (InActiveTimeRange(normalizedTime) && _actor.GetActiveAttack() == _attack)
             _actor.Attack();
