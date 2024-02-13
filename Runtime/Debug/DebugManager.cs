@@ -34,8 +34,9 @@ public class DebugManager : MonoBehaviour
         GetPlayerWeaponPairs();
     }
 
-    private void GetPlayerWeaponPairs()
+    public void GetPlayerWeaponPairs()
     {
+        _playerWeaponDebugPairs.Clear();
         var players = GameObject.FindGameObjectsWithTag("Player").ToList<GameObject>();
         _playerWeaponDebugPairs = new List<ActorWeaponDebugPair>(players.Count);
         foreach (GameObject g in players)
