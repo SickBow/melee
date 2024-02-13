@@ -21,7 +21,12 @@ public abstract class MeleeWeapon : MonoBehaviour
     public float GetHitboxWidthAndHeight() => hitBoxWidthAndHeight;
 
     public void Init(MeleeActor owner) => _owner = owner;
-
+    
+    public virtual List<RaycastHit> CalculateHits()
+    {
+        return BoxCast();
+    }
+    
     public virtual List<RaycastHit> BoxCast(){
         float halfWidthAndHeight = hitBoxWidthAndHeight/2;
 
@@ -38,7 +43,7 @@ public abstract class MeleeWeapon : MonoBehaviour
 
     public virtual void Attack(MeleeAttack attack){
         
-        var hits = BoxCast();
+        var hits = CalculateHits();
         foreach (RaycastHit hit in hits){
             var actor = hit.transform.root.GetComponent<MeleeActor>();
             actor?.ReceiveAttack(attack, hit);
