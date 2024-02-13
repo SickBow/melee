@@ -12,7 +12,7 @@ public abstract class MeleeWeapon : MonoBehaviour
     [SerializeField] float hitBoxWidthAndHeight; 
     [SerializeField] Transform hitBoxTip, hitBoxTail; 
 
-    private MeleeActor _owner;
+    protected MeleeActor _owner;
 
     public int GetDamage() => damage;
     public WeaponType GetWeaponType() => weaponType;
