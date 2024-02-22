@@ -22,7 +22,8 @@ public class ActivateAttack : StateMachineBehaviour
         MeleeAttackData matchingAttackData = null;
         if (clips.Length > 0) {
             AnimationClip stateClip = clips[0].clip;
-            matchingAttackData = attackDatas?.data?.Find(data => data.GetAnimationClip() == stateClip);
+            if (attackDatas?.data != null)
+                matchingAttackData = attackDatas.data.Find(data => data.GetAnimationClip() == stateClip);
         }
 
         if (matchingAttackData != null)
