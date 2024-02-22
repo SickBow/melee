@@ -25,6 +25,7 @@ public class MeleeActor : MonoBehaviour
     public Action<MeleeHitInfo> SentHitSuccess;
     public Action<MeleeAttack> AttackStart;
     public Action<MeleeAttack> AttackEnd;
+    public Action<string> RequestWeaponSwitch;
     
     void Awake()
     {
@@ -50,8 +51,9 @@ public class MeleeActor : MonoBehaviour
         _activeWeapon?.Init(this);
     }    
 
-    public void InitializeAttack(AttackType attackType, AnimatorStateInfo stateInfo, float damageStart, float damageEnd)
+    public void InitializeAttack(AttackType attackType, AnimatorStateInfo stateInfo, float damageStart, float damageEnd, string meleeWeapon)
     {
+        RequestWeaponSwitch?.Invoke(meleeWeapon);
         _activeAttack = new MeleeAttack(this, _activeWeapon, attackType, stateInfo, damageStart, damageEnd);
     }
 
