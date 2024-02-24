@@ -20,7 +20,7 @@ public abstract class MeleeWeapon : MonoBehaviour
     public Transform GetTail() => hitBoxTail;
     public float GetHitboxWidthAndHeight() => hitBoxWidthAndHeight;
 
-    public void Init(MeleeActor owner) => _owner = owner;
+    public virtual void Init(MeleeActor owner) => _owner = owner;
     
     public virtual List<RaycastHit> CalculateHits()
     {
