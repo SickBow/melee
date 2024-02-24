@@ -40,6 +40,8 @@ public class MeleeActor : MonoBehaviour
         SetActiveWeapon(weaponAnchor?.GetComponentInChildren<MeleeWeapon>());
     }
 
+    public Transform GetWeaponAnchor() => weaponAnchor;
+    public void SetWeaponAnchor(Transform anchor) => weaponAnchor = anchor;
     public void SetParryWindow(float window) => PARRY_WINDOW = window;
     public float GetParryWindow() => PARRY_WINDOW; 
     public MeleeAttack GetActiveAttack() => _activeAttack;
