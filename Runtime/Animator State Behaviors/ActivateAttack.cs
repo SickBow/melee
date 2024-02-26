@@ -9,8 +9,8 @@ public class ActivateAttack : StateMachineBehaviour
     [SerializeField] AttackType attackType;
     [SerializeField, Range(0,1)] float damageStartTime, damageStopTime;
     [SerializeField] string meleeWeapon;
-    private MeleeActor _actor;
-    private MeleeAttack _attack;
+    [SerializeField] private MeleeActor _actor;
+    [SerializeField] private MeleeAttack _attack;
     
     public float GetDamageStartTime() => damageStartTime;
     public float GetDamageStopTime() => damageStopTime;
