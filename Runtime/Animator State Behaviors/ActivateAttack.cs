@@ -11,6 +11,7 @@ public class ActivateAttack : StateMachineBehaviour
     [SerializeField] string meleeWeapon;
     [SerializeField] private MeleeActor _actor;
     [SerializeField] private MeleeAttack _attack;
+    [SerializeField] private MeleeAttackData _matchingAttackData;
     
     public float GetDamageStartTime() => damageStartTime;
     public float GetDamageStopTime() => damageStopTime;
@@ -25,7 +26,7 @@ public class ActivateAttack : StateMachineBehaviour
             if (attackDatas?.data != null)
                 matchingAttackData = attackDatas.data.Find(data => data.GetAnimationClip() == stateClip);
         }
-
+        _matchingAttackData = matchingAttackData;
         if (matchingAttackData != null)
         {
             attackType = matchingAttackData.GetAttackType();
