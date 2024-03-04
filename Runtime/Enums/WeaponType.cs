@@ -1,5 +1,6 @@
 public enum WeaponType{
     Dagger,
-    Katana,
+    Sword,
     Staff,
+    Body
 }
