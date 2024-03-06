@@ -11,7 +11,8 @@ public abstract class MeleeWeapon : MonoBehaviour
     [SerializeField] WeaponType weaponType;
     [SerializeField] float hitBoxWidthAndHeight; 
     [SerializeField] Transform hitBoxTip, hitBoxTail; 
-
+    [SerializeField] bool debugAttackRegion;
+    
     protected MeleeActor _owner;
 
     public int GetDamage() => damage;
@@ -25,6 +26,13 @@ public abstract class MeleeWeapon : MonoBehaviour
     public virtual List<RaycastHit> CalculateHits()
     {
         return BoxCast();
+    }
+
+    public virtual void DebugAttackRegion(List<RaycastHit> hits)
+    {
+        bool hitAnything = (hits.Count > 0 && _owner.GetMeleeState() == MeleeState.Attack);
+        Color col = hitAnything ? Color.red : Color.blue;
+        DebugBoxCast.Draw(hitBoxTail.position, Vector3.one * hitBoxWidthAndHeight, hitBoxTip.position - hitBoxTail.position, col);
     }
     
     public virtual List<RaycastHit> BoxCast(){
@@ -44,6 +52,7 @@ public abstract class MeleeWeapon : MonoBehaviour
     public virtual void Attack(MeleeAttack attack){
         
         var hits = CalculateHits();
+        if (debugAttackRegion) DebugAttackRegion(hits);
         foreach (RaycastHit hit in hits){
             var actor = hit.transform.root.GetComponent<MeleeActor>();
             actor?.ReceiveAttack(attack, hit);
