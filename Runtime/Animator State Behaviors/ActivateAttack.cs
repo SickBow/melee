@@ -8,6 +8,7 @@ public class ActivateAttack : StateMachineBehaviour
     [SerializeField] MeleeAttackDatas attackDatas;
     [SerializeField] AttackType attackType;
     [SerializeField, Range(0,1)] float damageStartTime, damageStopTime;
+    [SerializeField] float pushScale;
     [SerializeField] string meleeWeapon;
     [SerializeField] private MeleeActor _actor;
     [SerializeField] private MeleeAttack _attack;
@@ -33,6 +34,7 @@ public class ActivateAttack : StateMachineBehaviour
             damageStartTime = matchingAttackData.GetDamageStartTime();
             damageStopTime = matchingAttackData.GetDamageStopTime();
             meleeWeapon = matchingAttackData.GetMeleeWeapon();
+            pushScale = matchingAttackData.GetPushScale();
         }
         
         if (_actor == null)
@@ -42,7 +44,7 @@ public class ActivateAttack : StateMachineBehaviour
             damageStartTime = .3f; //default
             damageStopTime = .7f; //default
         }
-        _actor.InitializeAttack(attackType, stateInfo, damageStartTime, damageStopTime, meleeWeapon);
+        _actor.InitializeAttack(attackType, stateInfo, damageStartTime, damageStopTime, meleeWeapon, pushScale);
         _attack = _actor.GetActiveAttack();
         _actor.AttackStart?.Invoke(_attack);
     }
