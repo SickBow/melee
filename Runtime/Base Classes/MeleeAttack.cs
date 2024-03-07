@@ -8,7 +8,7 @@ namespace Sickbow.Melee
     [Serializable]
     public class MeleeAttack
     {
-        public MeleeAttack(MeleeActor sender, MeleeWeapon weapon, AttackType attackType, AnimatorStateInfo stateInfo, float damageStart, float damageEnd)
+        public MeleeAttack(MeleeActor sender, MeleeWeapon weapon, AttackType attackType, AnimatorStateInfo stateInfo, float damageStart, float damageEnd, float pushScale)
         {
             this.sender = sender;
             this.weapon = weapon;
@@ -16,6 +16,7 @@ namespace Sickbow.Melee
             this.stateInfo = stateInfo;
             this.damageStartNormalized = damageStart;
             this.damageEndNormalized = damageEnd;
+            this.pushScale = pushScale;
         }
 
         public int GetDamage()
@@ -31,6 +32,7 @@ namespace Sickbow.Melee
         public AttackType attackType;
         public AnimatorStateInfo stateInfo;
         public float damageStartNormalized, damageEndNormalized;
+        public float pushScale;
         public List<GameObject> gameObjectsHit = new List<GameObject>();
 
         static Dictionary<AttackType, float> attackTypeScalars = new Dictionary<AttackType, float>(){
