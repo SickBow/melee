@@ -4,5 +4,6 @@ public enum AttackType{
     Unblockable,
     Critical,
     Launcher,
-    WeaponThrow
+    WeaponThrow,
+    Charge
 }
