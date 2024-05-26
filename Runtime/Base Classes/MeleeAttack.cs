@@ -41,7 +41,8 @@ namespace Sickbow.Melee
         {AttackType.Unblockable, 2f},
         {AttackType.Critical, 2.5f},
         {AttackType.Launcher, 1f},
-        {AttackType.WeaponThrow, 1f}
+        {AttackType.WeaponThrow, 1f},
+        {AttackType.Charge, 1.5f}
     };
     }
 }
