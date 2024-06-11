@@ -58,7 +58,13 @@ public class MeleeActor : MonoBehaviour
         RequestWeaponSwitch?.Invoke(meleeWeapon);
         _activeAttack = new MeleeAttack(this, _activeWeapon, attackType, stateInfo, damageStart, damageEnd, pushScale, attackData);
     }
-
+    
+    public void InitializeAttack(AttackType attackType, AnimatorStateInfo stateInfo, float damageStart, float damageEnd, string meleeWeapon, float pushScale)
+    {
+        RequestWeaponSwitch?.Invoke(meleeWeapon);
+        _activeAttack = new MeleeAttack(this, _activeWeapon, attackType, stateInfo, damageStart, damageEnd, pushScale, null);
+    }
+    
     public void Attack(){
         meleeState = MeleeState.Attack;
         UpdateTimers();
