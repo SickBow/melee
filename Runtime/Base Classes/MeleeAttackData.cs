@@ -12,6 +12,7 @@ namespace Sickbow.Melee
         [SerializeField] AttackType attackType;
         [SerializeField] float damageStartTime, damageStopTime;
         [SerializeField] float pushScale;
+        [SerializeField] int combo;
         
         public AnimationClip GetAnimationClip() => clip;
         public string GetMeleeWeapon() => meleeWeapon;
@@ -19,5 +20,6 @@ namespace Sickbow.Melee
         public float GetDamageStartTime() => damageStartTime;
         public float GetDamageStopTime() => damageStopTime;
         public float GetPushScale() => pushScale;
+        public int GetCombo() => combo;
     }
 }
