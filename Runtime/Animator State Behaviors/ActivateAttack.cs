@@ -44,7 +44,7 @@ public class ActivateAttack : StateMachineBehaviour
             damageStartTime = .3f; //default
             damageStopTime = .7f; //default
         }
-        _actor.InitializeAttack(attackType, stateInfo, damageStartTime, damageStopTime, meleeWeapon, pushScale);
+        _actor.InitializeAttack(attackType, stateInfo, damageStartTime, damageStopTime, meleeWeapon, pushScale, matchingAttackData);
         _attack = _actor.GetActiveAttack();
         _actor.AttackStart?.Invoke(_attack);
     }
