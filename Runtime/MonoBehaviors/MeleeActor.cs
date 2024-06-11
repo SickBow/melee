@@ -53,10 +53,10 @@ public class MeleeActor : MonoBehaviour
         _activeWeapon?.Init(this);
     }    
 
-    public void InitializeAttack(AttackType attackType, AnimatorStateInfo stateInfo, float damageStart, float damageEnd, string meleeWeapon, float pushScale)
+    public void InitializeAttack(AttackType attackType, AnimatorStateInfo stateInfo, float damageStart, float damageEnd, string meleeWeapon, float pushScale, MeleeAttackData attackData)
     {
         RequestWeaponSwitch?.Invoke(meleeWeapon);
-        _activeAttack = new MeleeAttack(this, _activeWeapon, attackType, stateInfo, damageStart, damageEnd, pushScale);
+        _activeAttack = new MeleeAttack(this, _activeWeapon, attackType, stateInfo, damageStart, damageEnd, pushScale, attackData);
     }
 
     public void Attack(){
@@ -130,7 +130,8 @@ public class MeleeActor : MonoBehaviour
             receiver = this,
             weapon = attack.weapon,
             attackType = attack.attackType,
-            pushScale = attack.pushScale
+            pushScale = attack.pushScale,
+            attackData = attack.attackData
         };
     }
 
