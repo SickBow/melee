@@ -12,5 +12,6 @@ public class MeleeHitInfo
     public MeleeWeapon weapon;
     public AttackType attackType;
     public float pushScale;
+    public MeleeAttackData attackData;
 }
 }
