@@ -5,5 +5,6 @@ public enum AttackType{
     Critical,
     Launcher,
     WeaponThrow,
-    Charge
+    Charge,
+    Ranged
 }
