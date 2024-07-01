@@ -1,7 +1,10 @@
-public enum MeleeState 
+namespace Sickbow.Melee
 {
-    Default,
-    Attack,
-    Block,
-    Parry,
+    public enum MeleeState
+    {
+        Default,
+        Attack,
+        Block,
+        Parry,
+    }
 }
