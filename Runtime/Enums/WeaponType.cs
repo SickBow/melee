@@ -1,6 +1,10 @@
-public enum WeaponType{
-    Dagger,
-    Sword,
-    Staff,
-    Body
+namespace Sickbow.Melee
+{
+    public enum WeaponType
+    {
+        Dagger,
+        Katana,
+        Staff,
+        Body
+    }
 }
