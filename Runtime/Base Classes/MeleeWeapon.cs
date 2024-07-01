@@ -12,6 +12,7 @@ public abstract class MeleeWeapon : MonoBehaviour
     [SerializeField] float hitBoxWidthAndHeight; 
     [SerializeField] Transform hitBoxTip, hitBoxTail; 
     [SerializeField] bool debugAttackRegion;
+    [SerializeField] WeaponEquipPoint equipPoint;
     
     protected MeleeActor _owner;
 
