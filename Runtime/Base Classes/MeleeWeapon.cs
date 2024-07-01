@@ -16,6 +16,7 @@ public abstract class MeleeWeapon : MonoBehaviour
     
     protected MeleeActor _owner;
 
+    public WeaponEquipPoint GetWeaponEquipPoint() => equipPoint;
     public int GetDamage() => damage;
     public WeaponType GetWeaponType() => weaponType;
     public Transform GetTip() => hitBoxTip;
