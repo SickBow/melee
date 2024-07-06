@@ -16,14 +16,14 @@ namespace Sickbow.Melee
         [SerializeField] AnimationCurve orientSpeedCurve;
         [SerializeField] AnimationCurve moveSpeedCurve;
         [SerializeField] int topMoveSpeed;
-        [SerializeField] AnimationCurve forwardPushSpeedCurve;
-        [SerializeField] int topForwardPushSpeed;
+        [SerializeField] AnimationCurve pushSpeedCurve;
+        [SerializeField] int topPushSpeed;
 
         public AnimationCurve GetOrientSpeedCurve() => orientSpeedCurve;
         public AnimationCurve GetMoveSpeedCurve() => moveSpeedCurve;
         public int GetTopMoveSpeed() => topMoveSpeed;
-        public AnimationCurve GetForwardPushSpeedCurve() => forwardPushSpeedCurve;
-        public int GetTopForwardPushSpeed() => topForwardPushSpeed;
+        public AnimationCurve GetPushSpeedCurve() => pushSpeedCurve;
+        public int GetTopPushSpeed() => topPushSpeed;
         public AnimationClip GetAnimationClip() => clip;
         public string GetMeleeWeapon() => meleeWeapon;
         public AttackType GetAttackType() => attackType;
