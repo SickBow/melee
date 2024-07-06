@@ -23,7 +23,7 @@ namespace Sickbow.Melee
         public AnimationCurve GetMoveSpeedCurve() => moveSpeedCurve;
         public int GetTopMoveSpeed() => topMoveSpeed;
         public AnimationCurve GetForwardPushSpeedCurve() => forwardPushSpeedCurve;
-        public int TopForwardPushSpeed() => topForwardPushSpeed;
+        public int GetTopForwardPushSpeed() => topForwardPushSpeed;
         public AnimationClip GetAnimationClip() => clip;
         public string GetMeleeWeapon() => meleeWeapon;
         public AttackType GetAttackType() => attackType;
