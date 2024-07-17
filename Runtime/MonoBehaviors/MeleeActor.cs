@@ -11,6 +11,8 @@ public class MeleeActor : MonoBehaviour
 
     [SerializeField] MeleeState meleeState;
     [SerializeField] Transform rightHandWeaponAnchor, leftHandWeaponAnchor;
+    [SerializeField] List<WeaponEquip> weaponEquipPoints;
+    [SerializeField] List<WeaponStow> weaponStowPoints;
     
     private TimerGroup<MeleeState> stateTimers;
     private MeleeWeapon _activeWeapon;
@@ -43,6 +45,25 @@ public class MeleeActor : MonoBehaviour
             SetActiveWeapon(rightHandWeapon);
         else if (leftHandWeapon != null)
             SetActiveWeapon(leftHandWeapon);
+    }
+
+    public Transform GetEquipTransform( WeaponEquipPoint type ) => weaponEquipPoints.Find( x => x.type == type )?.point;
+    public void SetEquipTransform(WeaponEquipPoint type, Transform point)
+    {
+        var weaponEquip = weaponEquipPoints.Find(x => x.type == type);
+        if (weaponEquip != null)
+            weaponEquip.point = point;
+        else
+            Debug.LogWarning($"Could not find equip point of type {type}");
+    }
+    public Transform GetStowTransform(WeaponStowPoint type) => weaponStowPoints.Find(x => x.type == type)?.point;
+    public void SetStowTransform(WeaponStowPoint type, Transform point)
+    {
+        var weaponStow = weaponStowPoints.Find(x => x.type == type);
+        if (weaponStow != null)
+            weaponStow.point = point;
+        else
+            Debug.LogWarning($"Could not find stow point of type {type}");
     }
 
     public Transform GetRightHandWeaponAnchor() => rightHandWeaponAnchor;
