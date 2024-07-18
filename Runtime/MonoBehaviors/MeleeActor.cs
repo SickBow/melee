@@ -10,7 +10,6 @@ public class MeleeActor : MonoBehaviour
     [SerializeField] float PARRY_WINDOW = .25f;
 
     [SerializeField] MeleeState meleeState;
-    [SerializeField] Transform rightHandWeaponAnchor, leftHandWeaponAnchor;
     [SerializeField] List<WeaponEquip> weaponEquipPoints;
     [SerializeField] List<WeaponStow> weaponStowPoints;
     
@@ -39,8 +38,8 @@ public class MeleeActor : MonoBehaviour
         };
         stateTimers = new TimerGroup<MeleeState>((MeleeState[])Enum.GetValues(typeof(MeleeState)));
         
-        var rightHandWeapon = rightHandWeaponAnchor?.GetComponentInChildren<MeleeWeapon>();
-        var leftHandWeapon = leftHandWeaponAnchor?.GetComponentInChildren<MeleeWeapon>();
+        var rightHandWeapon = GetWeaponEquipTransform(WeaponEquipPoint.RightHand)?.GetComponentInChildren<MeleeWeapon>();
+        var leftHandWeapon = GetWeaponEquipTransform(WeaponEquipPoint.LeftHand)?.GetComponentInChildren<MeleeWeapon>();
         if (rightHandWeapon != null)
             SetActiveWeapon(rightHandWeapon);
         else if (leftHandWeapon != null)
@@ -66,10 +65,6 @@ public class MeleeActor : MonoBehaviour
             Debug.LogWarning($"Could not find stow point of type {type}");
     }
 
-    public Transform GetRightHandWeaponAnchor() => rightHandWeaponAnchor;
-    public void SetRightHandWeaponAnchor(Transform anchor) => rightHandWeaponAnchor = anchor;
-    public Transform GetLeftHandWeaponAnchor() => leftHandWeaponAnchor;
-    public void SetLeftHandWeaponAnchor(Transform anchor) => leftHandWeaponAnchor = anchor;
     public void SetParryWindow(float window) => PARRY_WINDOW = window;
     public float GetParryWindow() => PARRY_WINDOW; 
     public MeleeAttack GetActiveAttack() => _activeAttack;
