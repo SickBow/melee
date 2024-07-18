@@ -13,10 +13,12 @@ public abstract class MeleeWeapon : MonoBehaviour
     [SerializeField] Transform hitBoxTip, hitBoxTail; 
     [SerializeField] bool debugAttackRegion;
     [SerializeField] WeaponEquipPoint equipPoint;
+    [SerializeField] WeaponStowPoint stowPoint;
     
     protected MeleeActor _owner;
 
     public WeaponEquipPoint GetWeaponEquipPoint() => equipPoint;
+    public WeaponStowPoint GetWeaponStowPoint() => stowPoint;
     public int GetDamage() => damage;
     public WeaponType GetWeaponType() => weaponType;
     public Transform GetTip() => hitBoxTip;
