@@ -47,8 +47,8 @@ public class MeleeActor : MonoBehaviour
             SetActiveWeapon(leftHandWeapon);
     }
 
-    public Transform GetEquipTransform( WeaponEquipPoint type ) => weaponEquipPoints.Find( x => x.type == type )?.point;
-    public void SetEquipTransform(WeaponEquipPoint type, Transform point)
+    public Transform GetWeaponEquipTransform( WeaponEquipPoint type ) => weaponEquipPoints.Find( x => x.type == type )?.point;
+    public void SetWeaponEquipTransform(WeaponEquipPoint type, Transform point)
     {
         var weaponEquip = weaponEquipPoints.Find(x => x.type == type);
         if (weaponEquip != null)
@@ -56,8 +56,8 @@ public class MeleeActor : MonoBehaviour
         else
             Debug.LogWarning($"Could not find equip point of type {type}");
     }
-    public Transform GetStowTransform(WeaponStowPoint type) => weaponStowPoints.Find(x => x.type == type)?.point;
-    public void SetStowTransform(WeaponStowPoint type, Transform point)
+    public Transform GetWeaponStowTransform(WeaponStowPoint type) => weaponStowPoints.Find(x => x.type == type)?.point;
+    public void SetWeaponStowTransform(WeaponStowPoint type, Transform point)
     {
         var weaponStow = weaponStowPoints.Find(x => x.type == type);
         if (weaponStow != null)
