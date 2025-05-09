@@ -20,6 +20,7 @@ public abstract class MeleeWeapon : MonoBehaviour
     public WeaponEquipPoint GetWeaponEquipPoint() => equipPoint;
     public WeaponStowPoint GetWeaponStowPoint() => stowPoint;
     public int GetDamage() => damage;
+    public void SetDamage(int damage) => this.damage = damage;
     public WeaponType GetWeaponType() => weaponType;
     public Transform GetTip() => hitBoxTip;
     public Transform GetTail() => hitBoxTail;
