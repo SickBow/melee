@@ -18,13 +18,11 @@ namespace Sickbow.Melee
             this.damageEndNormalized = damageEnd;
             this.pushScale = pushScale;
             this.attackData = attackData;
+            this.damage = Mathf.RoundToInt(weapon.GetDamage() * attackTypeScalars[attackType]);
         }
 
-        public int GetDamage()
-        {
-            return Mathf.RoundToInt(weapon.GetDamage() * attackTypeScalars[attackType]);
-        }
-
+        public int GetDamage() => damage;
+        public void SetDamage(int damage) => this.damage = damage;
         public bool HitAlreadyRegistered(GameObject gameObject) => gameObjectsHit.Contains(gameObject);
         public void RegisterHit(GameObject gameObject) => gameObjectsHit.Add(gameObject);
         public static void SetGlobalAttackTypeDamageScale(AttackType attackType, float damageScale) => attackTypeScalars[attackType] = damageScale;
@@ -35,6 +33,7 @@ namespace Sickbow.Melee
         public AnimatorStateInfo stateInfo;
         public float damageStartNormalized, damageEndNormalized;
         public float pushScale;
+        private int damage;
         public List<GameObject> gameObjectsHit = new List<GameObject>();
 
         static Dictionary<AttackType, float> attackTypeScalars = new Dictionary<AttackType, float>(){
