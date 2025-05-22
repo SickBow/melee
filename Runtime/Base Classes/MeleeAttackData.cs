@@ -10,6 +10,8 @@ namespace Sickbow.Melee
         [SerializeField] AnimationClip clip;
         [SerializeField] string meleeWeapon;
         [SerializeField] AttackType attackType;
+        [SerializeField] bool damageOverride;
+        [SerializeField] int damage;
         [SerializeField] float damageStartTime, damageStopTime;
         [SerializeField] float pushScale;
         [SerializeField] int combo;
@@ -24,9 +26,12 @@ namespace Sickbow.Melee
         public int GetTopMoveSpeed() => topMoveSpeed;
         public AnimationCurve GetPushSpeedCurve() => pushSpeedCurve;
         public int GetTopPushSpeed() => topPushSpeed;
+
         public AnimationClip GetAnimationClip() => clip;
         public string GetMeleeWeapon() => meleeWeapon;
         public AttackType GetAttackType() => attackType;
+        public bool GetDamageOverride() => damageOverride;
+        public int GetDamage() => damage;
         public float GetDamageStartTime() => damageStartTime;
         public float GetDamageStopTime() => damageStopTime;
         public float GetPushScale() => pushScale;
