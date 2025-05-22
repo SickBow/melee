@@ -18,7 +18,10 @@ namespace Sickbow.Melee
             this.damageEndNormalized = damageEnd;
             this.pushScale = pushScale;
             this.attackData = attackData;
-            this.damage = Mathf.RoundToInt(weapon.GetDamage() * attackTypeScalars[attackType]);
+            if (attackData != null && attackData.GetDamageOverride() == true)
+                this.damage = attackData.GetDamage();
+            else
+                this.damage = Mathf.RoundToInt(weapon.GetDamage() * attackTypeScalars[attackType]);
         }
 
         public int GetDamage() => damage;
