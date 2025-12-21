@@ -59,10 +59,11 @@ public abstract class MeleeWeapon : MonoBehaviour
         var hits = CalculateHits();
         if (debugAttackRegion) DebugAttackRegion(hits);
         foreach (RaycastHit hit in hits){
-            var actor = hit.transform.root.GetComponent<MeleeActor>();
+            var actor = hit.transform.GetComponent<MeleeActor>();
             actor?.ReceiveAttack(attack, hit);
         }
     }
 
 }
 }
+
