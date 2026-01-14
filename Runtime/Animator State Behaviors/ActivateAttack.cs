@@ -38,7 +38,7 @@ public class ActivateAttack : StateMachineBehaviour
         }
         
         if (_actor == null)
-            _actor = animator.transform.root.GetComponent<MeleeActor>();
+            _actor = animator.gameObject.GetComponentInParent<MeleeActor>();
 
         if ((damageStartTime == 0 && damageStopTime == 0) || damageStopTime < damageStartTime){
             damageStartTime = .3f; //default
@@ -68,3 +68,4 @@ public class ActivateAttack : StateMachineBehaviour
     }
 }
 }
+
