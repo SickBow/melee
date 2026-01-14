@@ -12,7 +12,7 @@ public class ActivateBlock : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if (_actor == null)
-            _actor = animator.transform.root.GetComponent<MeleeActor>();
+            _actor = animator.gameObject.GetComponentInParent<MeleeActor>();
 
     }
 
@@ -27,4 +27,5 @@ public class ActivateBlock : StateMachineBehaviour
         _actor.Default();
     }
 }
+
 }
