@@ -7,13 +7,13 @@ namespace Sickbow.Melee{
 public abstract class MeleeWeapon : MonoBehaviour
 {
     
-    [SerializeField] int damage;
-    [SerializeField] WeaponType weaponType;
-    [SerializeField] float hitBoxWidthAndHeight; 
-    [SerializeField] Transform hitBoxTip, hitBoxTail; 
-    [SerializeField] bool debugAttackRegion;
-    [SerializeField] WeaponEquipPoint equipPoint;
-    [SerializeField] WeaponStowPoint stowPoint;
+    [SerializeField] protected int damage;
+    [SerializeField] protected WeaponType weaponType;
+    [SerializeField] protected float hitBoxWidthAndHeight; 
+    [SerializeField] protected Transform hitBoxTip, hitBoxTail; 
+    [SerializeField] protected bool debugAttackRegion;
+    [SerializeField] protected WeaponEquipPoint equipPoint;
+    [SerializeField] protected WeaponStowPoint stowPoint;
     
     protected MeleeActor _owner;
 
